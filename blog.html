@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detail</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="./blog.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="favicon icon.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Detail Content -->
+    <div class="blog-container">
+        <img id="blog-image" alt="Blog Image">
+        <h3 id="blog-title"></h3>
+        <p id="blog-text"></p>
+        <p id="blog-date" class="text-muted"></p>
+        <a href="index.html" class="btn" id="back-to-blogs">Back to Blogs</a>
+    </div>
+
+    <!-- Firebase and JavaScript Dependencies -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJQe3DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        // Your Firebase config (ensure it's the correct one)
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLoIuExl01cEIIUjhUX1tiyP5_emvdEcw",
+            authDomain: "blogging-website-55af7.firebaseapp.com",
+            databaseURL: "https://blogging-website-55af7-default-rtdb.firebaseio.com",
+            projectId: "blogging-website-55af7",
+            storageBucket: "blogging-website-55af7.firebasestorage.app",
+            messagingSenderId: "286010962969",
+            appId: "1:286010962969:web:c2b7f87bd2ff4733116688",
+            measurementId: "G-XXXXXXX"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+        // Get post ID from URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var postId = urlParams.get('id');
+
+        if (postId) {
+            // Fetch post from Firebase Realtime Database
+            database.ref('posts/' + postId).once('value', snapshot => {
+                var post = snapshot.val();
+                if (post) {
+                    document.getElementById('blog-image').src = post.imageURL;
+                    document.getElementById('blog-title').innerText = post.heading;
+                    document.getElementById('blog-text').innerText = post.text;
+                    document.getElementById('blog-date').innerText = 'Published on : ' + new Date(post.timestamp).toLocaleString();
+                } else {
+                    document.getElementById('blog-title').innerText = 'Post not found.';
+                }
+            });
+        } else {
+            document.getElementById('blog-title').innerText = 'Invalid Post ID.';
+        }
+
+        // JavaScript for changing button color on click
+        document.getElementById('back-to-blogs').addEventListener('click', function() {
+            this.classList.add('clicked');
+        });
+    </script>
+</body>
+</html>

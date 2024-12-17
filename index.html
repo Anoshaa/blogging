@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blogs</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Favicon for general browsers -->
+    <link rel="icon" href="favicon icon.png" type="image/png">
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="bg-[#212121] fixed w-full z-10 top-0 left-0">
+    <div class="max-w-screen-xl mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="favicon icon.png" alt="Logo" class="h-10">
+            </a>
+            <div class="hidden lg:flex space-x-8 items-center">
+            </div>
+            <form class="w-full max-w-md flex items-center" onsubmit="searchPosts(event)">
+                <input type="search" id="search-input" class="form-input w-full px-4 py-2 rounded-md focus:outline-none focus:ring-0 focus:border-[#f7a807] transition-all border-2 border-[#f7a807]" placeholder="Search" aria-label="Search">
+                <button type="submit" class="btn custom-btn text-[#212121] px-6 py-2 rounded-md bg-[#f7a807] border-2 border-[#f7a807] hover:bg-transparent hover:text-[#f7a807] hover:border-[#f7a807] transition-all duration-300 ml-2">
+                    Search
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="blog-heading">
+            <h1 style="color: #f7a807; font-size:70px; font-weight: 100;">Create a New Blog</h1>
+            <p style="color: #212121;font-size: 20px;">Share your thoughts and ideas with the world!</p>
+        </div>
+        <div class="card" style="background-color: #212121;">
+            <div class="card-body">
+                <form id="post-form">
+                    <center>
+                        <h3 class="text-3xl text-[#f7a807]">Make A Blog</h3>
+                    </center>
+                    <input type="text" id="blog-heading" class="form-control mb-3" placeholder="Enter Blog Heading">
+                    <textarea id="post" class="form-control" placeholder="What's on your mind..."></textarea>
+                    <input type="file" id="image" accept="images/*" class="form-control mt-3">
+                    <div class="text-center mt-3">
+                        <button type="button" id="upload-btn" class="btn custom-btn text-[#212121] px-6 py-2 rounded-md bg-[#f7a807] border-2 border-[#f7a807] hover:bg-transparent hover:text-[#f7a807] hover:border-[#f7a807] transition-all duration-300 ml-2" onclick="upload()">
+                            Upload
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+  
+        <div class="row mt-4" id="posts">
+            <!-- Posts will be displayed here -->
+        </div>
+    </div>
+
+
+          <div class="max-w-screen-xl mx-auto px-4 py-8">
+          <div class="flex flex-col lg:flex-row items-center">
+            <!-- Left Side: Paragraph -->
+            <div class="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
+              <h1 class="text-3xl font-bold text-gray-900 mb-4">See what's new</h1>
+              <p class="text-gray-700 text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt ea, ullam cupiditate consectetur necessitatibus adipisci voluptatibus. Saepe dignissimos a, laborum ad quas deserunt velit quaerat. Nulla, amet? Sunt, blanditiis enim.</p>
+            </div>
+            <!-- Right Side: Image -->
+            <div class="lg:w-1/2">
+              <img src="whats-new-visual-6-7.webp" alt="Placeholder Image" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+          </div>
+        </div>
+
+
+
+    <!-- Content Container with Background Color -->
+  <div class="bg-[#212121] w-full px-4">
+    <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center">
+      <!-- Left Side: Paragraph -->
+      <div class="lg:w-2/3 lg:text-left mb-8 lg:mb-0 mt-12">
+        <h1 class="text-5xl font-bold text-white mb-4">One platform, a universe of possibilities</h1>
+        <p class="text-gray-300 text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt ea, ullam cupiditate consectetur necessitatibus adipisci voluptatibus. Saepe dignissimos a, laborum ad quas deserunt velit quaerat. Nulla, amet? Sunt, blanditiis enim.</p>
+      </div>
+    </div>
+  
+    <!-- Multiple Images Below (One Image per Line) -->
+    <div class="mt-8">
+      <img src="showcase-top-row-full (1).webp" alt="Image 1" class="w-full h-auto rounded-lg shadow-lg mb-4">
+      <img src="showcase-middle-row.webp" alt="Image 2" class="w-full h-auto rounded-lg shadow-lg mb-4">
+      <img src="showcase-bottom-row (1).webp" alt="Image 3" class="w-full h-auto rounded-lg shadow-lg mb-4">
+    </div>
+  </div>
+
+  <div class="max-w-screen-xl mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row items-center">
+      <!-- Left Side: Paragraph -->
+      <div class="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
+        <h1 class="text-5xl font-bold text-gray-900 mb-4">Meet the community</h1>
+        <p class="text-gray-700 text-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt ea, ullam cupiditate consectetur necessitatibus adipisci voluptatibus. Saepe dignissimos a, laborum ad quas deserunt velit quaerat. Nulla, amet? Sunt, blanditiis enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas temporibus, illum ipsum repellendus debitis accusantium voluptate? Officiis, laudantium natus! Corporis magni placeat enim cumque nihil, sunt beatae ut iste numquam! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur voluptates et impedit at ut aperiam sit earum, sequi maiores quam, laboriosam, molestias id explicabo natus dolores. Labore recusandae iure officia?</p>
+      </div>
+      
+      <!-- Right Side: Image -->
+      <div class="lg:w-1/2">
+        <img src="photo-community-1.webp" alt="Placeholder Image" class="w-full h-auto rounded-lg shadow-lg">
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-screen-xl mx-auto px-4 py-8">
+    <div class="flex flex-col lg:flex-row items-center">
+      <!-- Left Side: Paragraph -->
+      <div class="lg:w-1/2 lg:text-left mb-8 lg:mb-0">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Build for yourself, not by yourself</h3>
+        <p class="text-gray-700 text-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse beatae placeat perferendis blanditiis voluptatum molestias corporis explicabo rerum odio, eligendi ratione veniam a animi ipsam corrupti excepturi officiis incidunt quo.</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#212121] text-white py-4">
+        <div class="max-w-screen-xl mx-auto flex justify-between items-center px-4">
+            <!-- Left: Logo -->
+            <div class="flex items-center">
+                <img src="favicon icon.png" alt="Logo" class="h-10"> <!-- Replace with your logo -->
+            </div>
+
+            <!-- Right: Social Media Icons -->
+            <div class="flex space-x-6">
+                <a href="https://facebook.com" target="_blank" class="text-white hover:text-gray-500 transition-colors duration-300">
+                    <i class="bi bi-facebook text-2xl"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="text-white hover:text-gray-500 transition-colors duration-300">
+                    <i class="bi bi-twitter text-2xl"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="text-white hover:text-gray-500 transition-colors duration-300">
+                    <i class="bi bi-instagram text-2xl"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="text-white hover:text-gray-500 transition-colors duration-300">
+                    <i class="bi bi-linkedin text-2xl"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="text-white hover:text-gray-500 transition-colors duration-300">
+                    <i class="bi bi-youtube text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Firebase and JavaScript Dependencies -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="defualt.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
+

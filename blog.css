@@ -1,0 +1,104 @@
+body {
+    margin-top: 70px;
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    min-width: 70px;
+    margin-top: 20px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 50px; /* Space between links */
+  }
+
+  .navbar-nav .nav-item a {
+    color: white; /* Set link color */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Transition for hover effect */
+  }
+
+  .navbar-nav .nav-item a:hover {
+    color: #f8f9fa; /* Change text color on hover */
+    text-decoration: none; /* Underline on hover */
+  }
+
+ /* Blog content styles */
+.blog-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#blog-title {
+    margin: 0 27px;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+#blog-text {
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    word-wrap: break-word;
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+#blog-date {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0 28px;
+}
+
+#blog-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 30px auto 20px auto;
+}
+
+.btn {
+    width: 150px;
+    padding: 8px 15px;
+    margin: 20px 0 20px 20px;  /* Move the button slightly to the left */
+    display: inline-block;
+    background-color: #212121;
+    border: 1px solid #212121;
+    color: #f7a807;
+    transition: background-color 0.3s ease, border-color 0.3s ease;  /* Transition for hover effect */
+    outline: none; /* Remove focus outline */
+}
+
+.btn:hover {
+    background-color: #f7a807;  /* Darker color on hover */
+    border-color: #f7a807;  /* Darker border on hover */
+    color: #212121;
+    text-decoration: none;  /* Remove underline on hover */
+}
+
+/* Added class for button click */
+.btn.clicked {
+    background-color: #f7a807; /* Change color on click */
+    border-color: #f7a807;
+    color: #212121;
+    text-decoration: none;
+    outline: none;
+}
+
+/* Ensure the rest of the layout remains the same */
+.card {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}

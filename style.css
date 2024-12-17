@@ -1,0 +1,208 @@
+body {
+    margin-top: 70px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    /* Maximum height for the logo */
+    width: auto;
+    /* Maintain the aspect ratio of the logo */
+    min-width: 70px;
+}
+
+.container {
+    padding-top: 100px;
+    /* Adjust content margin */
+}
+
+.blog-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card-text {
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+
+
+.custom-btn {
+    background-color: #212121;
+    /* Set the background color */
+    color: #f7a807;
+    /* Set the text color to yellow */
+    border: 1px solid #f7a807;
+    /* Set the border color to yellow */
+}
+
+.custom-btn:hover {
+    background-color: #f7a807;
+    /* Change background to yellow on hover */
+    color: #212121;
+    /* Change text color to #212121 on hover */
+    border: 1px solid #212121;
+    /* Change the border color to #212121 on hover */
+}
+
+/* Remove blue border on focus for the buttons */
+#search-input:focus, #upload-btn:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+
+
+#image:focus {
+border-color: #f7a807 !important; /* Yellow border on focus */
+box-shadow: none !important; /* Remove the default focus shadow */
+}
+#blog-heading:focus, #post:focus, #image:focus {
+border-color: #f7a807 !important; /* Yellow border on focus */
+box-shadow: none !important; /* Remove the default focus shadow */
+}
+
+
+
+/* Custom styles for SweetAlert buttons */
+.swal-btn {
+color: #212121 !important;  /* Set text color */
+border: none !important;             /* Remove border */
+box-shadow: none !important;
+}
+
+/* Custom styles for SweetAlert buttons */
+.swal2-confirm {
+background-color: #f7a807 !important;  /* Set button background color */
+color: #212121 !important;            /* Set button text color */
+border: none !important;              /* Remove border */
+box-shadow: none !important;          /* Remove shadow */
+}
+
+/* Cancel button styles */
+.swal2-cancel {
+background-color: #212121 !important; /* Set button background color */
+color: #f7a807 !important;           /* Set button text color */
+border: none !important;             /* Remove border */
+box-shadow: none !important;         /* Remove shadow */
+}
+
+
+/* Confirm button styles */
+.swal2-confirm.confirm-btn {
+background-color: #f7a807 !important; /* Background color for the confirm button */
+color: #212121 !important;           /* Text color for the confirm button */
+border: none !important;             /* Remove border */
+box-shadow: none !important;         /* Remove shadow */
+}
+
+/* Cancel button styles */
+.swal2-cancel.cancel-btn {
+background-color: #212121 !important; /* Background color for the cancel button */
+color: #f7a807 !important;           /* Text color for the cancel button */
+border: none !important;             /* Remove border */
+box-shadow: none !important;         /* Remove shadow */
+}
+
+
+/* Style for the Read More button */
+.btn-post-readmore {
+    background-color: #212121; /* Green background */
+    color: #f7a807; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    font-size: 14px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.btn-post-readmore:hover {
+    background-color: #f7a807; /* Darker green on hover */
+    color: #212121;
+}
+/* For Read More button */
+.card .btn-post-readmore:focus {
+    outline: none !important;
+    background-color: #f7a807 !important;
+    color: #212121 !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the Delete button */
+.btn-post-delete {
+    background-color: #f7a807; /* Red background */
+    color: #212121; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    font-size: 14px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.btn-post-delete:hover {
+    background-color: #212121; /* Darker red on hover */
+    color: #f7a807;
+}
+/* For Delete button */
+.card .btn-post-delete:focus {
+    outline: none;
+    background-color: #212121 !important;
+    color: #f7a807 !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.btn-post-readmore:focus, .btn-post-delete:focus {
+    outline: none !important; /* Completely remove the outline */
+    box-shadow: none !important; /* Ensure no shadow appears */
+}
+
+
+
+/* Style for the blog post cards */
+.card {
+    background-color: #fff; /* Dark background */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow */
+    border-radius: 8px; /* Rounded corners for the card */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Ensure the image fills the space nicely */
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #212121; /* Set the color for the title */
+    font-weight: 900px;
+    text-transform: uppercase; /* Make title uppercase */
+
+
+}
+
+.card-text {
+    color: #212121; /* Set the color for the text */
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bi {
+    transition: color 0.3s ease-in-out !important;
+}
+.bi:hover {
+    color: gray !important;
+}
+
+
